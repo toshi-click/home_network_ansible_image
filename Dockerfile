@@ -95,5 +95,8 @@ RUN wget git.io/nodebrew && \
 
 RUN ansible-galaxy collection install cisco.ios
 
+# CIサーバーからsshの警告が出ないように設定を追加する
+ADD ansible.cfg /etc/ansible/ansible.cfg
+
 WORKDIR $HOME/work
 CMD ["/bin/bash"]
